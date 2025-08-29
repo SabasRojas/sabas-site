@@ -3,29 +3,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-// Typewriter effect hook
-function useTypewriter(text: string, speed: number = 50) {
-  const [displayText, setDisplayText] = useState('');
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    if (displayText.length < text.length) {
-      const timer = setTimeout(() => {
-        setDisplayText(text.slice(0, displayText.length + 1));
-      }, speed);
-      return () => clearTimeout(timer);
-    }
-  }, [displayText, text, speed, isVisible]);
-
-  const startTypewriter = () => {
-    setIsVisible(true);
-  };
-
-  return { displayText, startTypewriter, isComplete: displayText === text };
-}
-
 // Typewriter component
 function TypewriterText({ text, speed = 50, className = "" }: { text: string; speed?: number; className?: string }) {
   const [displayText, setDisplayText] = useState('');
@@ -192,7 +169,6 @@ function ExperienceCard({ title, company, period, description, achievements, tec
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showMoreProjects, setShowMoreProjects] = useState(false);
 
   useEffect(() => {
@@ -247,10 +223,6 @@ export default function Home() {
           }
         }
       }
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -895,7 +867,7 @@ export default function Home() {
                 <span className="text-2xl">💬</span>
               </div>
               <p className="text-2xl font-semibold mb-8 text-gray-200">
-                Let's discuss how we can work together.
+                Let&apos;s discuss how we can work together.
               </p>
               <div className="space-y-4">
                 <a

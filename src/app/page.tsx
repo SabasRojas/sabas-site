@@ -662,7 +662,7 @@ export default function Home() {
                   </div>
                   <div className="p-4 bg-gray-700 rounded-xl">
                     <span className="block text-2xl mb-2">📚</span>
-                    <span className="font-bold text-white">Dean's List (7x)</span>
+                    <span className="font-bold text-white">Dean&apos;s List (7x)</span>
                   </div>
                   <div className="p-4 bg-gray-700 rounded-xl">
                     <span className="block text-2xl mb-2">👥</span>
@@ -857,7 +857,7 @@ export default function Home() {
         <section id="contact" className="py-20 animate-on-scroll opacity-0">
           <div className="text-center mb-12 mt-12">
             <h2 className="text-5xl font-bold mb-4 text-white">
-              Let's Connect
+              Let&apos;s Connect
             </h2>
             <p className="text-xl text-gray-300">Ready to discuss opportunities and collaborations</p>
           </div>

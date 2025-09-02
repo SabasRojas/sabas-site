@@ -407,7 +407,7 @@ export default function Home() {
             </h2>
             <div className="max-w-4xl mx-auto">
               <TypewriterText 
-                text="Born in El Paso, Texas, and raised across both Ciudad Juárez, México and El Paso, TX, I bring a cross-cultural perspective to technology and problem-solving. As recent Computer Science graduate from UTEP, I’m passionate about building clean, practical solutions and am currently seeking opportunities in software engineering, cloud, mobile/web, or AI/ML driven tech."
+                text="Born and raised in El Paso, Texas, I bring a unique perspective to technology and problem-solving. As a recent Computer Science graduate from UTEP, I'm passionate about building clean, practical solutions that make a real impact. My journey in tech has been driven by curiosity and a desire to create innovative software that solves problems. I'm currently seeking opportunities in software engineering, cloud computing, data engineering, mobile/web development, or AI/ML driven technologies where I can contribute to meaningful projects and continue growing."
                 speed={12}
                 className="text-xl text-gray-300 leading-relaxed mb-8 block"
               />
@@ -416,7 +416,7 @@ export default function Home() {
                   <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl">🌍</span>
                   </div>
-                  <h3 className="font-bold text-white mb-2">Cross-Cultural</h3>
+                  <h3 className="font-bold text-white mb-2">Border Perspective</h3>
                   <p className="text-gray-400 text-sm">Bicultural upbringing fostering adaptability and global perspective</p>
                 </div>
                 <div className="text-center p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors duration-300">
@@ -480,8 +480,8 @@ export default function Home() {
             <div style={{ animationDelay: '0ms' }} className="animate-on-scroll opacity-0">
               <ProjectCard
                 title="Medical AI Diagnostic Agent"
-                description="Advanced AI system that diagnoses medical conditions using Bayesian inference algorithms. Processes comprehensive CSV health datasets and models joint probabilities to deliver accurate diagnostic predictions with statistical confidence intervals."
-                tech={['Python', 'Bayesian Inference', 'Data Processing', 'Machine Learning', 'Statistical Modeling']}
+                description="Built a Python AI agent to diagnose conditions from symptom inputs, improving diagnostic accuracy. Processed, cleaned, and analyzed patient records to build a joint probability model from CSV data. Collaborated in a 3-person team to test symptom scenarios and refine diagnostic accuracy."
+                tech={['Python', 'Data Processing', 'Machine Learning', 'Bayesian Inference', 'Team Collaboration']}
                 codeLink="https://github.com/SabasRojas/Health_Diagnostics_AI"
               />
             </div>
@@ -495,17 +495,17 @@ export default function Home() {
             </div>
             <div style={{ animationDelay: '400ms' }} className="animate-on-scroll opacity-0">
               <ProjectCard
-                title="Machine Learning LOL Item Predictor"
-                description="Sophisticated machine learning system leveraging Riot Games' API to analyze League of Legends item statistics and predict gold cost efficiency. Features comprehensive data preprocessing, regression pipelines, and performance optimization algorithms."
-                tech={['Python', 'Random Forest', 'scikit-learn', 'pandas', 'API Integration', 'Data Science']}
+                title="Item Cost Prediction with Machine Learning"
+                description="Developed ML models in Python with scikit-learn to predict League of Legends item efficiency from Riot Games API data. Preprocessed datasets by handling missing values and normalizing features, improving model accuracy. Worked in a small development team using Git/GitHub to build and manage ML pipelines."
+                tech={['Python', 'scikit-learn', 'Machine Learning', 'API Integration', 'Data Preprocessing']}
                 codeLink="https://github.com/SabasRojas/MachineLearning_Item_Analysis"
               />
             </div>
             <div style={{ animationDelay: '600ms' }} className="animate-on-scroll opacity-0">
               <ProjectCard
                 title="Portfolio Website"
-                description="Modern responsive portfolio built with Next.js, featuring advanced animations, scroll-triggered effects, dynamic lighting elements, and optimized performance. Deployed and hosted on AWS using S3 for static hosting and CloudFront for global content delivery."
-                tech={['Next.js', 'Tailwind CSS', 'TypeScript', 'React', 'Animation', 'AWS S3', 'CloudFront']}
+                description="Built and deployed a personal portfolio website with Next.js, React, TypeScript, and Tailwind CSS. Designed a responsive UI with animations and hosted on AWS S3/CloudFront for global performance."
+                tech={['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Animation', 'AWS S3', 'CloudFront']}
                 codeLink="https://github.com/SabasRojas/sabas-site"
               />
             </div>
@@ -604,15 +604,14 @@ export default function Home() {
                 title="Software Engineering Intern"
                 company="JUSDA"
                 period="Jan 2023 - May 2023"
-                description="Developed enterprise mobile solutions for IT asset management in a fast-paced international logistics company."
-                metrics={["40% efficiency improvement", "3-person agile team", "React Native expertise"]}
+                description="Developed enterprise mobile solutions for IT asset management in a fast-paced international logistics company. Built and deployed an Android app with React Native and TypeScript for IT equipment tracking, featuring barcode scanning that enhanced IT department workflows and efficiency."
+                metrics={["Enhanced IT workflows", "React Native & TypeScript", "Production deployment"]}
                 achievements={[
-                  "Built complete Android application using React Native and TypeScript for barcode-based IT asset tracking system",
-                  "Implemented robust offline data handling with SQLite, ensuring 100% data integrity during network outages",
-                  "Collaborated with international development team using Git/GitHub, participating in code reviews and sprint planning",
-                  "Delivered production-ready features that improved IT asset management efficiency by 40%"
+                  "Built and deployed an Android app with React Native and TypeScript for IT equipment tracking, which featured barcode scanning that enhanced IT department workflows and efficiency",
+                  "Implemented local data storage with SQLite, enabling offline access and efficient data management",
+                  "Collaborated in a three-person team utilizing Git and GitHub for version control and code collaboration"
                 ]}
-                tech={['React Native', 'TypeScript', 'SQLite', 'Git/GitHub', 'Mobile Development', 'Agile']}
+                tech={['React Native', 'TypeScript', 'SQLite', 'Git/GitHub', 'Mobile Development', 'Barcode Scanning']}
               />
             </div>
             <div className="animate-on-scroll opacity-0" style={{ animationDelay: '200ms' }}>
@@ -620,15 +619,13 @@ export default function Home() {
                 title="Customer Service Representative"
                 company="Family Dollar"
                 period="Nov 2024 - Feb 2025"
-                description="Delivered exceptional customer service in high-volume retail environment while developing essential professional skills."
-                metrics={["100+ customers daily", "Excellent performance", "Fast-paced operations"]}
+                description="Delivered exceptional customer service in high-volume retail environment while developing essential professional skills. Assisted customers, operated the register, and handled transactions accurately in a rapid environment."
+                metrics={["100+ customers daily", "Fast-paced operations", "Store maintenance"]}
                 achievements={[
                   "Handled 100+ customer transactions daily maintaining excellent accuracy in high-pressure environment",
-                  "Maintained store organization, inventory management, and cleanliness standards consistently",
-                  "Developed exceptional multitasking abilities and communication skills essential for team collaboration",
-                  "Gained valuable real-world experience in customer relations and operational efficiency"
+                  "Maintained store organization, restocked shelves, and ensured a clean shopping environment"
                 ]}
-                tech={['Customer Service', 'Operations Management', 'Multitasking', 'Communication', 'Problem Solving']}
+                tech={['Customer Service', 'Operations Management', 'Transaction Processing', 'Store Organization', 'Problem Solving']}
               />
             </div>
           </div>
@@ -654,7 +651,7 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                   <div className="p-4 bg-gray-700 rounded-xl">
                     <span className="block text-2xl mb-2">📊</span>
-                    <span className="font-bold text-blue-400">GPA 3.61</span>
+                    <span className="font-bold text-blue-400">GPA 3.60</span>
                   </div>
                   <div className="p-4 bg-gray-700 rounded-xl">
                     <span className="block text-2xl mb-2">🏆</span>
@@ -822,8 +819,8 @@ export default function Home() {
                   <span className="text-2xl">⚽</span>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-2 text-white">Founder & Captain - Caudillos Football Club</h3>
-                  <p className="text-blue-400 font-semibold mb-4">Ciudad Juárez, Chihuahua, Mexico • July 2023 - Present</p>
+                  <h3 className="text-2xl font-bold mb-0 text-white">Founder & Captain - Caudillos Football Club</h3>
+                  <p className="text-blue-400 font-semibold mb-4">July 2023 - January 2025</p>
                   <p className="text-gray-300 mb-6 leading-relaxed">
                     Founded and organized a competitive amateur soccer team from the ground up, demonstrating entrepreneurial spirit and leadership capabilities while balancing academic and professional commitments.
                   </p>
@@ -906,7 +903,7 @@ export default function Home() {
         <footer className="py-12 border-t border-gray-800 text-center">
           <div className="space-y-4">
             <p className="text-gray-400">
-              © 2025 Sabas Rojas. Crafted with passion using Next.js and Tailwind CSS.
+              © 2025 Sabas Alberto Rojas. Crafted with passion.
             </p>
             <div className="flex justify-center gap-6">
               <a href="https://github.com/SabasRojas" className="text-gray-500 hover:text-white transition-colors">GitHub</a>

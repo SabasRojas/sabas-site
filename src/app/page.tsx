@@ -234,9 +234,9 @@ export default function Home() {
   }, []);
 
   const skills = {
-    languages: ['Python', 'Java', 'C', 'SQL', 'HTML/CSS', 'PHP', 'TypeScript'],
+    languages: ['Python', 'Java', 'C', 'SQL', 'HTML/CSS', 'PHP', 'TypeScript', 'Rust'],
     frameworks: ['React Native', 'Next.js', 'FastAPI', 'SvelteKit', 'Tailwind CSS'],
-    databases: ['MySQL', 'SQLite', 'PostgreSQL', 'CockroachDB'],
+    databases: ['MySQL', 'SQLite', 'PostgreSQL', 'CockroachDB', 'Neo4j'],
     tools: ['Git/GitHub', 'MS Office Suite', 'AWS', 'VS Code', 'FileZilla', 'Wireshark', 'Cursor'],
     operatingSystems: ['Windows', 'Linux', 'macOS', 'Unix', 'Ubuntu'],
     specialties: ['Data Analysis', 'Machine Learning', 'Full-Stack Development', 'Mobile Development']
@@ -542,7 +542,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto pt-4 pb-8">
               <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '200ms' : '0ms' }}>
                 <ProjectCard
-                  title="Omok Strategy Game"
+                  title="Omok Game (Gomoku) in Haskell"
                   description="Advanced two-player strategy game implementation in Haskell featuring sophisticated AI algorithms. Supports Player vs. Player and Player vs. CPU modes with intelligent decision-making on a 15x15 board matrix."
                   tech={['Haskell', 'Functional Programming', 'AI Algorithms', 'Game Theory', 'Strategy Patterns']}
                   codeLink="https://github.com/SabasRojas/omok-game"
@@ -554,6 +554,14 @@ export default function Home() {
                   description="Comprehensive terminal-based airline customer interface simulation. Allows users to add flights, view trips, manage bookings, checkout, and navigate through a complete airline menu system. Demonstrates advanced object-oriented programming and user experience design."
                   tech={['Java', 'Terminal Interface', 'OOP', 'System Design', 'User Experience', 'Menu Systems']}
                   codeLink="https://github.com/SabasRojas/Airline-Menu"
+                />
+              </div>
+              <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '400ms' : '0ms' }}>
+                <ProjectCard
+                  title="Omok Game (Gomoku) in Dart"
+                  description="A command-line implementation of Omok (Gomoku), a classic board game where players aim to align five stones in a row on a 15x15 grid. Built in Dart, this project includes a machine opponent with both random and smart strategies."
+                  tech={['Dart', 'CLI', 'Game AI', 'Algorithms', 'Board Game']}
+                  codeLink="https://github.com/SabasRojas/omok-dart-game"
                 />
               </div>
             </div>
@@ -712,6 +720,7 @@ export default function Home() {
                         <p>Requirements Engineering</p>
                         <p>Design & Implementation</p>
                         <p>Computer Security</p>
+                        <p>Automated Techniques for Improved Software Quality</p>
                       </div>
                     </div>
                   </div>
@@ -789,10 +798,10 @@ export default function Home() {
                 <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl">📚</span>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white text-center">AWS Cloud Practitioner Certification</h3>
+                <h3 className="text-xl font-bold mb-3 text-white text-center">AWS Certified Solutions Architect</h3>
                 <p className="text-blue-400 font-semibold text-center mb-4">Amazon Web Services</p>
                 <p className="text-gray-300 text-sm text-center mb-6">
-                  Currently studying for the official AWS Cloud Practitioner certification exam to validate cloud knowledge.
+                  Preparing for the AWS Solutions Architect exam focused on designing scalable, secure, and cost‑optimized architectures on AWS (VPC, IAM, EC2, LB/ASG, S3, RDS/DynamoDB, networking, and best practices).
                 </p>
                 <div className="flex justify-center">
                   <span className="inline-block px-4 py-2 bg-orange-600/20 text-orange-400 rounded-full text-sm font-medium border border-orange-500/30">

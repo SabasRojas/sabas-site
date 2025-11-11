@@ -104,10 +104,11 @@ function ProjectCard({ title, description, codeLink, demoLink, tech }: {
 }
 
 // ExperienceCard component
-function ExperienceCard({ title, company, period, description, achievements, tech, metrics }: {
+function ExperienceCard({ title, company, period, location, description, achievements, tech, metrics }: {
   title: string;
   company: string;
   period: string;
+  location: string;
   description: string;
   achievements?: string[];
   tech: string[];
@@ -118,14 +119,12 @@ function ExperienceCard({ title, company, period, description, achievements, tec
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full group-hover:w-2 transition-all duration-300"></div>
       <div className="ml-6 relative z-10">
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4 mb-4">
           <div>
             <h3 className="text-2xl font-bold mb-1 text-white group-hover:text-blue-400 transition-colors">{title}</h3>
             <p className="text-blue-400 font-semibold text-lg">{company} • {period}</p>
           </div>
-          <div className="hidden md:flex w-16 h-16 bg-blue-600/20 rounded-full items-center justify-center group-hover:bg-blue-600/40 transition-colors">
-            <span className="text-2xl">💼</span>
-          </div>
+          <p className="text-gray-300 text-sm md:text-base md:text-right md:mr-4 mt-1 md:mt-1">{location}</p>
         </div>
         
         <p className="text-gray-300 mb-6 leading-relaxed text-lg">{description}</p>
@@ -564,6 +563,14 @@ export default function Home() {
                   codeLink="https://github.com/SabasRojas/omok-dart-game"
                 />
               </div>
+            <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '500ms' : '0ms' }}>
+              <ProjectCard
+                title="FixMate – AI Property Management"
+                description="AI-driven property management platform built in a 3-person hackathon team to streamline communication among tenants, property managers, and service providers with automated updates, task routing, and status tracking."
+                tech={['TypeScript', 'Supabase', 'AI Automation', 'Team Collaboration', 'Hackathon']}
+                codeLink="https://github.com/SabasRojas/fixmate"
+              />
+            </div>
             </div>
           </div>
           
@@ -612,6 +619,7 @@ export default function Home() {
                 title="Software Engineering Intern"
                 company="JUSDA"
                 period="Jan 2023 - May 2023"
+                location="Remote"
                 description="Developed enterprise mobile solutions for IT asset management in a fast-paced international logistics company. Built and deployed an Android app with React Native and TypeScript for IT equipment tracking, featuring barcode scanning that enhanced IT department workflows and efficiency."
                 metrics={["Enhanced IT workflows", "React Native & TypeScript", "Production deployment"]}
                 achievements={[
@@ -624,9 +632,41 @@ export default function Home() {
             </div>
             <div className="animate-on-scroll opacity-0" style={{ animationDelay: '200ms' }}>
               <ExperienceCard
+                title="Information Systems Specialist"
+                company="Servi-Tax"
+                period="Aug 2025 - Sep 2025"
+                location="El Paso, Texas"
+                description="Delivered bilingual IT support for a busy tax services office in El Paso (Texas), diagnosing hardware and software issues, stabilizing network connectivity, and partnering on marketing outreach to keep operations running smoothly."
+                metrics={["Stabilized daily network uptime", "Supported 10+ staff members", "Coordinated marketing updates"]}
+                achievements={[
+                  "Responded to staff support tickets, walking team members through hardware, OS, and application fixes in clear, accessible language",
+                  "Troubleshot routers, cabling, and ISP-related issues to restore internet and intranet connectivity with minimal downtime",
+                  "Collaborated on marketing collateral updates and social media scheduling to expand customer reach"
+                ]}
+                tech={['IT Support', 'Network Troubleshooting', 'Hardware Maintenance', 'Customer Communication', 'Marketing']}
+              />
+            </div>
+            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '400ms' }}>
+              <ExperienceCard
+                title="Store Protection Specialist"
+                company="ROSS"
+                period="Oct 2025 - Present"
+                location="El Paso, Texas"
+                description="Maintain a visible presence at entrances, monitor the sales floor, and partner with store leadership to deter theft and cultivate a safe, customer-focused environment in alignment with Ross loss-prevention standards."
+                metrics={["Entrance coverage & deterrence", "Shrink reduction support", "Safety compliance leadership"]}
+                achievements={[
+                  "Greet customers, verify receipts when appropriate, and act as a consistent deterrent against theft at store entry and exit points",
+                  "Observe shopper and associate activity, document incidents, and escalate suspicious behavior to management per Ross protocols"
+                ]}
+                tech={['Loss Prevention', 'Customer Service', 'Risk Assessment', 'Incident Reporting', 'Team Training']}
+              />
+            </div>
+            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '600ms' }}>
+              <ExperienceCard
                 title="Customer Service Representative"
                 company="Family Dollar"
                 period="Nov 2024 - Feb 2025"
+                location="El Paso, Texas"
                 description="Delivered exceptional customer service in high-volume retail environment while developing essential professional skills. Assisted customers, operated the register, and handled transactions accurately in a rapid environment."
                 metrics={["100+ customers daily", "Fast-paced operations", "Store maintenance"]}
                 achievements={[

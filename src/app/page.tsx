@@ -49,12 +49,13 @@ function TypewriterText({ text, speed = 50, className = "" }: { text: string; sp
 }
 
 // ProjectCard component
-function ProjectCard({ title, description, codeLink, demoLink, tech }: {
+function ProjectCard({ title, description, codeLink, demoLink, tech, codeButtonText }: {
   title: string;
   description: string;
   codeLink?: string;
   demoLink?: string;
   tech: string[];
+  codeButtonText?: string;
 }) {
   return (
     <div className="group relative overflow-hidden bg-gray-800 border border-gray-700 rounded-xl p-6 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/50">
@@ -81,9 +82,9 @@ function ProjectCard({ title, description, codeLink, demoLink, tech }: {
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 text-sm font-medium hover:shadow-lg"
-              aria-label={`View code for ${title}`}
+              aria-label={`${codeButtonText || 'View code'} for ${title}`}
             >
-              View Code
+              {codeButtonText || 'View Code'}
             </a>
           )}
           {demoLink && (
@@ -314,13 +315,15 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
+            <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
               <a
-                href="mailto:rojassabas17@gmail.com"
-                className="group flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 font-semibold hover:shadow-2xl hover:scale-105"
-                aria-label="Send email"
+                href="https://www.linkedin.com/in/sabas-rojas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 px-8 py-4 border-2 border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-white transition-all duration-300 font-semibold hover:shadow-xl hover:scale-105"
+                aria-label="View LinkedIn profile"
               >
-                <span>Get In Touch</span>
+                <span>LinkedIn</span>
               </a>
               <a
                 href="https://github.com/SabasRojas"
@@ -330,15 +333,6 @@ export default function Home() {
                 aria-label="View GitHub profile"
               >
                 <span>GitHub</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/sabas-rojas/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 px-8 py-4 border-2 border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-white transition-all duration-300 font-semibold hover:shadow-xl hover:scale-105"
-                aria-label="View LinkedIn profile"
-              >
-                <span>LinkedIn</span>
               </a>
             </div>
           </div>
@@ -393,7 +387,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="relative inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-gray-300 rounded-full hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 font-medium hover:scale-105 hover:bg-gray-700 hover:text-white border border-gray-700 hover:border-blue-500 z-10"
             >
-              <span>Download Résumé</span>
+              <span>View Résumé</span>
             </a>
           </div>
         </section>
@@ -478,10 +472,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             <div style={{ animationDelay: '0ms' }} className="animate-on-scroll opacity-0">
               <ProjectCard
-                title="Medical AI Diagnostic Agent"
-                description="Built a Python AI agent to diagnose conditions from symptom inputs, improving diagnostic accuracy. Processed, cleaned, and analyzed patient records to build a joint probability model from CSV data. Collaborated in a 3-person team to test symptom scenarios and refine diagnostic accuracy."
-                tech={['Python', 'Data Processing', 'Machine Learning', 'Bayesian Inference', 'Team Collaboration']}
-                codeLink="https://github.com/SabasRojas/Health_Diagnostics_AI"
+                title="Whispo – AI-Powered Digital Presence App"
+                description="Cross-platform mobile application that enables users to create an AI-driven digital version of themselves for asynchronous conversations. Built with React Native for iOS and Android, featuring real-time messaging and JWT-based authentication. Developed a Rust backend with RESTful endpoints returning JSON responses, integrated AI APIs for personalized conversational responses, CockroachDB Cloud for the database, and Render (AWS-backed) deployment. Published to iOS App Store and Google Play Store."
+                tech={['React Native', 'Rust', 'REST API', 'JWT', 'AI Integration', 'CockroachDB', 'iOS', 'Android', 'Cloud Deployment', 'Mobile Development']}
+                codeLink="https://apps.apple.com/us/app/whispo-talk-to-anyone/id6756091873"
+                codeButtonText="Download on App Store"
               />
             </div>
             <div style={{ animationDelay: '200ms' }} className="animate-on-scroll opacity-0">
@@ -494,13 +489,21 @@ export default function Home() {
             </div>
             <div style={{ animationDelay: '400ms' }} className="animate-on-scroll opacity-0">
               <ProjectCard
+                title="Medical AI Diagnostic Agent"
+                description="Built a Python AI agent to diagnose conditions from symptom inputs, improving diagnostic accuracy. Processed, cleaned, and analyzed patient records to build a joint probability model from CSV data. Collaborated in a 3-person team to test symptom scenarios and refine diagnostic accuracy."
+                tech={['Python', 'Data Processing', 'Machine Learning', 'Bayesian Inference', 'Team Collaboration']}
+                codeLink="https://github.com/SabasRojas/Health_Diagnostics_AI"
+              />
+            </div>
+            <div style={{ animationDelay: '600ms' }} className="animate-on-scroll opacity-0">
+              <ProjectCard
                 title="Item Cost Prediction with Machine Learning"
                 description="Developed ML models in Python with scikit-learn to predict League of Legends item efficiency from Riot Games API data. Preprocessed datasets by handling missing values and normalizing features, improving model accuracy. Worked in a small development team using Git/GitHub to build and manage ML pipelines."
                 tech={['Python', 'scikit-learn', 'Machine Learning', 'API Integration', 'Data Preprocessing']}
                 codeLink="https://github.com/SabasRojas/MachineLearning_Item_Analysis"
               />
             </div>
-            <div style={{ animationDelay: '600ms' }} className="animate-on-scroll opacity-0">
+            <div style={{ animationDelay: '800ms' }} className="animate-on-scroll opacity-0">
               <ProjectCard
                 title="Portfolio Website"
                 description="Built and deployed a personal portfolio website with Next.js, React, TypeScript, and Tailwind CSS. Designed a responsive UI with animations and hosted on AWS S3/CloudFront for global performance."
@@ -508,20 +511,12 @@ export default function Home() {
                 codeLink="https://github.com/SabasRojas/sabas-site"
               />
             </div>
-            <div style={{ animationDelay: '800ms' }} className="animate-on-scroll opacity-0">
+            <div style={{ animationDelay: '1000ms' }} className="animate-on-scroll opacity-0">
               <ProjectCard
                 title="Event Ticketing System"
                 description="Java-based concert ticket management system simulating Ticketmaster functionality with event creation, ticket browsing, purchasing, and inventory management. Built collaboratively using advanced OOP principles, UML design patterns, and persistent CSV/TXT file storage."
                 tech={['Java', 'Advanced OOP', 'UML Diagrams', 'File I/O', 'CSV/TXT', 'Team Collaboration']}
                 codeLink="https://github.com/SabasRojas/event-ticketing-system"
-              />
-            </div>
-            <div style={{ animationDelay: '1000ms' }} className="animate-on-scroll opacity-0">
-              <ProjectCard
-                title="Interactive Gamification Platform"
-                description="Full-stack web application designed for gamification systems with robust MySQL backend architecture. Features comprehensive user management, interactive frontend elements, and server-side logic for dynamic content delivery."
-                tech={['MySQL', 'PHP', 'HTML/CSS', 'Database Design', 'Web Development']}
-                codeLink="https://github.com/SabasRojas/gamification-platform"
               />
             </div>
           </div>
@@ -537,9 +532,17 @@ export default function Home() {
           </div>
 
           {/* Additional Projects - Expandable */}
-          <div className={`transition-all duration-500 ease-in-out ${showMoreProjects ? 'max-h-[800px] opacity-100 mt-8' : 'max-h-0 opacity-0'}`}>
+          <div className={`transition-all duration-500 ease-in-out ${showMoreProjects ? 'max-h-[1000px] opacity-100 mt-8' : 'max-h-0 opacity-0'}`}>
             <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto pt-4 pb-8">
               <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '200ms' : '0ms' }}>
+                <ProjectCard
+                  title="Interactive Gamification Platform"
+                  description="Full-stack web application designed for gamification systems with robust MySQL backend architecture. Features comprehensive user management, interactive frontend elements, and server-side logic for dynamic content delivery."
+                  tech={['MySQL', 'PHP', 'HTML/CSS', 'Database Design', 'Web Development']}
+                  codeLink="https://github.com/SabasRojas/gamification-platform"
+                />
+              </div>
+              <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '300ms' : '0ms' }}>
                 <ProjectCard
                   title="Omok Game (Gomoku) in Haskell"
                   description="Advanced two-player strategy game implementation in Haskell featuring sophisticated AI algorithms. Supports Player vs. Player and Player vs. CPU modes with intelligent decision-making on a 15x15 board matrix."
@@ -547,7 +550,7 @@ export default function Home() {
                   codeLink="https://github.com/SabasRojas/omok-game"
                 />
               </div>
-              <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '300ms' : '0ms' }}>
+              <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '400ms' : '0ms' }}>
                 <ProjectCard
                   title="Airline Management System"
                   description="Comprehensive terminal-based airline customer interface simulation. Allows users to add flights, view trips, manage bookings, checkout, and navigate through a complete airline menu system. Demonstrates advanced object-oriented programming and user experience design."
@@ -555,7 +558,7 @@ export default function Home() {
                   codeLink="https://github.com/SabasRojas/Airline-Menu"
                 />
               </div>
-              <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '400ms' : '0ms' }}>
+              <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '500ms' : '0ms' }}>
                 <ProjectCard
                   title="Omok Game (Gomoku) in Dart"
                   description="A command-line implementation of Omok (Gomoku), a classic board game where players aim to align five stones in a row on a 15x15 grid. Built in Dart, this project includes a machine opponent with both random and smart strategies."
@@ -563,7 +566,7 @@ export default function Home() {
                   codeLink="https://github.com/SabasRojas/omok-dart-game"
                 />
               </div>
-            <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '500ms' : '0ms' }}>
+            <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '600ms' : '0ms' }}>
               <ProjectCard
                 title="FixMate – AI Property Management"
                 description="AI-driven property management platform built in a 3-person hackathon team to streamline communication among tenants, property managers, and service providers with automated updates, task routing, and status tracking."
@@ -687,7 +690,45 @@ export default function Home() {
             </h2>
             <p className="text-xl text-gray-300">Strong foundation in computer science and innovation</p>
           </div>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto space-y-8">
+            {/* Master's Degree */}
+            <div className="bg-gray-800 rounded-2xl p-10 border border-gray-700 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:border-blue-500/50">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-3xl">🎓</span>
+                </div>
+                <h3 className="text-3xl font-bold mb-3 text-white">Master of Science in Software Engineering</h3>
+                <p className="text-xl font-semibold text-blue-400 mb-6">University of Texas at El Paso (UTEP) • January 2026 - Present</p>
+                <div className="flex justify-center mb-8">
+                  <span className="inline-block px-4 py-2 bg-orange-600/20 text-orange-400 rounded-full text-sm font-medium border border-orange-500/30">
+                    📖 In Progress
+                  </span>
+                </div>
+
+                <div className="mt-8">
+                  <h4 className="text-2xl font-bold mb-6 text-white text-center">Current Courses (Spring 2026)</h4>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="p-5 bg-blue-900/30 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
+                      <div className="text-3xl mb-3">🏗️</div>
+                      <h5 className="font-semibold text-blue-400 mb-2">Software Architecture & Design</h5>
+                      <p className="text-gray-300 text-sm">Advanced principles of software architecture, design patterns, and system design methodologies</p>
+                    </div>
+                    <div className="p-5 bg-blue-900/30 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
+                      <div className="text-3xl mb-3">👁️</div>
+                      <h5 className="font-semibold text-blue-400 mb-2">Computer Vision</h5>
+                      <p className="text-gray-300 text-sm">Image processing, feature extraction, object detection, and deep learning for visual recognition</p>
+                    </div>
+                    <div className="p-5 bg-blue-900/30 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
+                      <div className="text-3xl mb-3">🧠</div>
+                      <h5 className="font-semibold text-blue-400 mb-2">Deep Learning</h5>
+                      <p className="text-gray-300 text-sm">Neural networks, convolutional networks, recurrent networks, and advanced deep learning architectures</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bachelor's Degree */}
             <div className="bg-gray-800 rounded-2xl p-10 border border-gray-700 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:border-blue-500/50">
               <div className="text-center">
                 <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -916,14 +957,13 @@ export default function Home() {
                 Let&apos;s discuss how we can work together.
               </p>
               <div className="space-y-4">
-                <a
-                  href="mailto:rojassabas17@gmail.com"
-                  className="inline-flex items-center gap-2 md:gap-3 px-6 md:px-10 py-4 md:py-5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 font-bold text-lg md:text-xl hover:shadow-2xl hover:scale-105 max-w-full overflow-hidden"
-                  aria-label="Send email to Sabas Rojas"
+                <div
+                  className="inline-flex items-center gap-2 md:gap-3 px-6 md:px-10 py-4 md:py-5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 font-bold text-lg md:text-xl hover:shadow-2xl hover:scale-105 max-w-full overflow-hidden cursor-default"
+                  aria-label="Email address"
                 >
                   <span>📧</span>
                   <span className="truncate">rojassabas17@gmail.com</span>
-                </a>
+                </div>
                 <div className="pt-4">
                   <button
                     onClick={(event) => {

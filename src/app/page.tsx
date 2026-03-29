@@ -308,7 +308,7 @@ export default function Home() {
                 Computer Science Graduate
               </p>
               <p className="text-lg md:text-xl text-blue-400 font-semibold">
-                Software Developer • Passionate About Technology & Innovation • 22 Years Old
+                Software Developer • Passionate About Technology & Innovation • 23 Years Old
               </p>
               <p className="text-base text-gray-400 mt-2">
                 El Paso, Texas • Fluent in English, Spanish & Basic French
@@ -400,7 +400,7 @@ export default function Home() {
             </h2>
             <div className="max-w-4xl mx-auto">
               <TypewriterText 
-                text="Born and raised in El Paso, Texas, I bring a unique perspective to technology and problem-solving. As a recent Computer Science graduate from UTEP, I'm passionate about building clean, practical solutions that make a real impact. My journey in tech has been driven by curiosity and a desire to create innovative software that solves problems. I'm currently seeking opportunities in software engineering, cloud computing, data engineering, mobile/web development, or AI/ML driven technologies where I can contribute to meaningful projects and continue growing."
+                text="Born and raised in El Paso, Texas, I bring a unique perspective to technology and problem-solving. As a recent Computer Science graduate from UTEP, I'm now pursuing a Master of Science in Software Engineering there, and I'm passionate about building clean, practical solutions that make a real impact. My journey in tech has been driven by curiosity and a desire to create innovative software that solves problems. I'm currently seeking opportunities in software engineering, cloud computing, data engineering, mobile/web development, or AI/ML driven technologies where I can contribute to meaningful projects and continue growing."
                 speed={12}
                 className="text-xl text-gray-300 leading-relaxed mb-8 block"
               />
@@ -619,6 +619,23 @@ export default function Home() {
           <div className="space-y-12 max-w-6xl mx-auto">
             <div className="animate-on-scroll opacity-0" style={{ animationDelay: '0ms' }}>
               <ExperienceCard
+                title="Test Technician (Validation & Automation)"
+                company="Wiwynn"
+                period="Mar 2026 - Present"
+                location="El Paso, Texas"
+                description="Run validation and automated testing on enterprise rack-mounted servers in production, Linux command-line workflows, scripted checks, and rack bring-up to verify power, networking, and system behavior before equipment ships."
+                metrics={["Enterprise server validation", "Linux CLI & automation", "Production test environment"]}
+                achievements={[
+                  "Perform validation testing on enterprise rack-mounted servers in a production environment to ensure system functionality and readiness for deployment",
+                  "Utilize Linux command-line tools and automated test procedures to verify system performance and hardware components including CPU, memory, storage, network interfaces, etc.",
+                  "Install and configure servers within test racks, verifying correct power delivery, network connectivity, and system initialization",
+                  "Monitor system diagnostics and logs during validation, document test outcomes, and escalate hardware or configuration failures to appropriate engineering and support teams for further analysis"
+                ]}
+                tech={['Linux', 'Validation Testing', 'Server Hardware', 'Test Automation', 'Diagnostics', 'Documentation']}
+              />
+            </div>
+            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '200ms' }}>
+              <ExperienceCard
                 title="Software Engineering Intern"
                 company="JUSDA"
                 period="Jan 2023 - May 2023"
@@ -633,7 +650,7 @@ export default function Home() {
                 tech={['React Native', 'TypeScript', 'SQLite', 'Git/GitHub', 'Mobile Development', 'Barcode Scanning']}
               />
             </div>
-            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '200ms' }}>
+            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '400ms' }}>
               <ExperienceCard
                 title="Information Systems Specialist"
                 company="Servi-Tax"
@@ -649,11 +666,11 @@ export default function Home() {
                 tech={['IT Support', 'Network Troubleshooting', 'Hardware Maintenance', 'Customer Communication', 'Marketing']}
               />
             </div>
-            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '400ms' }}>
+            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '600ms' }}>
               <ExperienceCard
                 title="Store Protection Specialist"
                 company="ROSS"
-                period="Oct 2025 - Present"
+                period="Oct 2025 - Mar 2026"
                 location="El Paso, Texas"
                 description="Maintain a visible presence at entrances, monitor the sales floor, and partner with store leadership to deter theft and cultivate a safe, customer-focused environment in alignment with Ross loss-prevention standards."
                 metrics={["Entrance coverage & deterrence", "Shrink reduction support", "Safety compliance leadership"]}
@@ -664,7 +681,7 @@ export default function Home() {
                 tech={['Loss Prevention', 'Customer Service', 'Risk Assessment', 'Incident Reporting', 'Team Training']}
               />
             </div>
-            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '600ms' }}>
+            <div className="animate-on-scroll opacity-0" style={{ animationDelay: '800ms' }}>
               <ExperienceCard
                 title="Customer Service Representative"
                 company="Family Dollar"

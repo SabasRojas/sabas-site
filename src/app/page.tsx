@@ -49,14 +49,19 @@ function TypewriterText({ text, speed = 50, className = "" }: { text: string; sp
 }
 
 // ProjectCard component
-function ProjectCard({ title, description, codeLink, demoLink, tech, codeButtonText }: {
+function ProjectCard({ title, description, codeLink, demoLink, tech, codeButtonText, demoButtonText, demoLinkStyle }: {
   title: string;
   description: string;
   codeLink?: string;
   demoLink?: string;
   tech: string[];
   codeButtonText?: string;
+  demoButtonText?: string;
+  demoLinkStyle?: 'primary' | 'outline';
 }) {
+  const demoLinkClasses = demoLinkStyle === 'primary'
+    ? 'px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 text-sm font-medium hover:shadow-lg'
+    : 'px-4 py-2 border-2 border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 text-sm font-medium';
   return (
     <div className="group relative overflow-hidden bg-gray-800 border border-gray-700 rounded-xl p-6 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/50">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -75,7 +80,7 @@ function ProjectCard({ title, description, codeLink, demoLink, tech, codeButtonT
             </span>
           ))}
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           {codeLink && (
             <a
               href={codeLink}
@@ -92,10 +97,10 @@ function ProjectCard({ title, description, codeLink, demoLink, tech, codeButtonT
               href={demoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 border-2 border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 text-sm font-medium"
-              aria-label={`View demo for ${title}`}
+              className={demoLinkClasses}
+              aria-label={`${demoButtonText || 'View demo'} for ${title}`}
             >
-              Live Demo
+              {demoButtonText || 'Live Demo'}
             </a>
           )}
         </div>
@@ -305,7 +310,7 @@ export default function Home() {
             
             <div className="relative inline-block mb-6">
               <p className="text-2xl md:text-3xl font-bold text-gray-200 mb-2">
-                Computer Science Graduate
+                M.S. Software Engineering · UTEP
               </p>
               <p className="text-lg md:text-xl text-blue-400 font-semibold">
                 Software Developer • Passionate About Technology & Innovation • 23 Years Old
@@ -477,30 +482,33 @@ export default function Home() {
                 tech={['React Native', 'Rust', 'REST API', 'JWT', 'AI Integration', 'CockroachDB', 'iOS', 'Android', 'Cloud Deployment', 'Mobile Development']}
                 codeLink="https://apps.apple.com/us/app/whispo-talk-to-anyone/id6756091873"
                 codeButtonText="Download on App Store"
+                demoLink="https://play.google.com/store/apps/details?id=com.sabasrojas.whispo&pcampaignid=web_share"
+                demoButtonText="Get it on Google Play"
+                demoLinkStyle="primary"
               />
             </div>
             <div style={{ animationDelay: '200ms' }} className="animate-on-scroll opacity-0">
               <ProjectCard
-                title="TRACE – Targeted Reconnaissance for Advanced Content Exploitation"
-                description="U.S. Army DEVCOM capstone project consolidating enterprise penetration-testing utilities into a modern web application. Features AI-driven username/password generation, real-time dashboards, network visualization, and DoD STIG/NIST 800-53 compliance for cybersecurity assessments."
+                title="TRACE (Targeted Reconnaissance for Advanced Content Exploitation)"
+                description="Capstone project sponsored by the U.S. Army DEVCOM Data Analysis Center to support cybersecurity assessments. A secure full-stack platform that unifies penetration-testing tools with project management, real-time dashboards, tree-graph visualizations, and an AI-based credential generator to streamline vulnerability discovery. Integrates Python backend modules for automated web application scanning, crawling, and testing with a SvelteKit frontend dashboard for seamless reconnaissance, built with DoD STIG/NIST 800-53 compliance in mind."
                 tech={['Python', 'SvelteKit', 'Neo4j', 'AI Algorithms', 'Cybersecurity', 'DoD Compliance']}
                 codeLink="https://github.com/SabasRojas/TRACE"
               />
             </div>
             <div style={{ animationDelay: '400ms' }} className="animate-on-scroll opacity-0">
               <ProjectCard
-                title="Medical AI Diagnostic Agent"
-                description="Built a Python AI agent to diagnose conditions from symptom inputs, improving diagnostic accuracy. Processed, cleaned, and analyzed patient records to build a joint probability model from CSV data. Collaborated in a 3-person team to test symptom scenarios and refine diagnostic accuracy."
-                tech={['Python', 'Data Processing', 'Machine Learning', 'Bayesian Inference', 'Team Collaboration']}
-                codeLink="https://github.com/SabasRojas/Health_Diagnostics_AI"
+                title="BERT Re-implementation (Frozen vs Fine-tuning)"
+                description="Comparison of frozen BERT feature extraction against full fine-tuning for text classification on AG News. Built with Hugging Face and PyTorch using bert-base-uncased, testing linear probing on a frozen encoder versus updating all weights. Fine-tuning reached ~94.6% test accuracy vs ~74% frozen, highlighting the trade-off between training cost and task performance."
+                tech={['Python', 'PyTorch', 'Hugging Face', 'BERT', 'NLP', 'Deep Learning', 'AG News']}
+                codeLink="https://github.com/SabasRojas/bert-frozen-vs-finetuning"
               />
             </div>
             <div style={{ animationDelay: '600ms' }} className="animate-on-scroll opacity-0">
               <ProjectCard
-                title="Item Cost Prediction with Machine Learning"
-                description="Developed ML models in Python with scikit-learn to predict League of Legends item efficiency from Riot Games API data. Preprocessed datasets by handling missing values and normalizing features, improving model accuracy. Worked in a small development team using Git/GitHub to build and manage ML pipelines."
-                tech={['Python', 'scikit-learn', 'Machine Learning', 'API Integration', 'Data Preprocessing']}
-                codeLink="https://github.com/SabasRojas/MachineLearning_Item_Analysis"
+                title="Song Popularity Predictor"
+                description="Machine learning project that predicts track popularity from Spotify-style audio features, with regression (0-100 score) and hit classification (top 20%). Includes feature importance analysis and a Streamlit demo where users adjust sliders or upload MP3/WAV files to estimate popularity and hit probability from extracted audio cues."
+                tech={['Python', 'scikit-learn', 'pandas', 'Streamlit', 'Machine Learning', 'Regression', 'Classification']}
+                codeLink="https://github.com/SabasRojas/song-popularity-predictor"
               />
             </div>
             <div style={{ animationDelay: '800ms' }} className="animate-on-scroll opacity-0">
@@ -532,7 +540,7 @@ export default function Home() {
           </div>
 
           {/* Additional Projects - Expandable */}
-          <div className={`transition-all duration-500 ease-in-out ${showMoreProjects ? 'max-h-[1000px] opacity-100 mt-8' : 'max-h-0 opacity-0'}`}>
+          <div className={`transition-all duration-500 ease-in-out ${showMoreProjects ? 'max-h-[1600px] opacity-100 mt-8' : 'max-h-0 opacity-0'}`}>
             <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto pt-4 pb-8">
               <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '200ms' : '0ms' }}>
                 <ProjectCard
@@ -572,6 +580,22 @@ export default function Home() {
                 description="AI-driven property management platform built in a 3-person hackathon team to streamline communication among tenants, property managers, and service providers with automated updates, task routing, and status tracking."
                 tech={['TypeScript', 'Supabase', 'AI Automation', 'Team Collaboration', 'Hackathon']}
                 codeLink="https://github.com/SabasRojas/fixmate"
+              />
+            </div>
+            <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '700ms' : '0ms' }}>
+              <ProjectCard
+                title="Medical AI Diagnostic Agent"
+                description="Built a Python AI agent to diagnose conditions from symptom inputs, improving diagnostic accuracy. Processed, cleaned, and analyzed patient records to build a joint probability model from CSV data. Collaborated in a 3-person team to test symptom scenarios and refine diagnostic accuracy."
+                tech={['Python', 'Data Processing', 'Machine Learning', 'Bayesian Inference', 'Team Collaboration']}
+                codeLink="https://github.com/SabasRojas/Health_Diagnostics_AI"
+              />
+            </div>
+            <div className={`transition-all duration-500 ease-out ${showMoreProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: showMoreProjects ? '800ms' : '0ms' }}>
+              <ProjectCard
+                title="Item Cost Prediction with Machine Learning"
+                description="Developed ML models in Python with scikit-learn to predict League of Legends item efficiency from Riot Games API data. Preprocessed datasets by handling missing values and normalizing features, improving model accuracy. Worked in a small development team using Git/GitHub to build and manage ML pipelines."
+                tech={['Python', 'scikit-learn', 'Machine Learning', 'API Integration', 'Data Preprocessing']}
+                codeLink="https://github.com/SabasRojas/MachineLearning_Item_Analysis"
               />
             </div>
             </div>
